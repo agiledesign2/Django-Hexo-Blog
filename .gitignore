@@ -1,0 +1,12 @@
+*.pyc
+*~
+__pycache__
+blog/migrations
+imgs
+uploads
+mysite.log
+links.txt
+README.md
+env
+db.sqlite3
+.vscode
