@@ -93,7 +93,6 @@ class Archive(View):
         for i in all_date:
             all_date_list.append(i['add_time'].strftime("%Y-%m-%d"))
 
-        # 遍历1年的日期
         end = datetime.date(latest_date.year, latest_date.month, latest_date.day)
         begin = datetime.date(latest_date.year-1, latest_date.month, latest_date.day)
         d = begin
@@ -113,7 +112,6 @@ class Archive(View):
             date_list.append(temp_list)
             temp_list = []
 
-        # 文章归档分页
         try:
             page = request.GET.get('page', 1)
         except PageNotAnInteger:
@@ -215,8 +213,8 @@ class About(View):
         for i in date_list:
             value_list.append(all_date_list.count(i))
 
-        temp_list = []  # 临时集合
-        tags_list = []  # 存放每个标签对应的文章数
+        temp_list = []  
+        tags_list = []  
         tags = Tag.objects.all()
         for tag in tags:
             temp_list.append(tag.name)
